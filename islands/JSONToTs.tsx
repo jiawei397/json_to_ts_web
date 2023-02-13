@@ -1,26 +1,21 @@
 import { useState } from "preact/hooks";
 import { Button } from "../components/Button.tsx";
 import { TextArea } from "../components/TextArea.tsx";
+import jsonToTS from "json_to_ts";
 
 export default function JSONToTS() {
   const [json, setJSON] = useState("");
   const [ts, setTS] = useState("");
-  const trans = async () => {
-    const body = {
-      data: "",
-    };
+  const trans = () => {
+    let data;
     try {
-      body.data = JSON.parse(json);
+      data = JSON.parse(json);
     } catch (error) {
       alert("Invalid JSON");
       return;
     }
-    const res = await fetch("/api/trans", {
-      method: "POST",
-      body: JSON.stringify(body),
-    });
-    const data = await res.text();
-    setTS(data);
+    const arr = jsonToTS(data);
+    setTS(arr.join("\n"));
   };
   const copy = async () => {
     if (!ts) {
