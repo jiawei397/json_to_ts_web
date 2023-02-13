@@ -1,15 +1,16 @@
 import { Head } from "$fresh/runtime.ts";
-import YamlToTs from "../islands/JSONToTs.tsx";
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.tsx";
+import JsonToTs from "../islands/JSONToTs.tsx";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>JSON to TypeScript interface</title>
-      </Head>
+      <Header />
       <div class="p-4 w-full">
-        <YamlToTs />
+        <JsonToTs />
       </div>
+      <Footer />
     </>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from "preact/hooks";
 import { Button } from "../components/Button.tsx";
 import { TextArea } from "../components/TextArea.tsx";
 import jsonToTS from "json_to_ts";
+import ArrowIcon from "icons/arrow-big-right.tsx";
 
 export default function JSONToTS() {
   const [json, setJSON] = useState("");
@@ -33,6 +34,9 @@ export default function JSONToTS() {
           onChange={(e) => setJSON(e.currentTarget.value)}
         >
         </TextArea>
+        <div class="flex items-center">
+          <ArrowIcon alt="Deno logo" class="w-8 h-8" />
+        </div>
         <TextArea
           readonly
           placeholder="TypeScript interface"
