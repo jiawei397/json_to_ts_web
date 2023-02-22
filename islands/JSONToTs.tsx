@@ -35,7 +35,11 @@ export default function JSONToTS() {
         >
         </TextArea>
         <div class="flex items-center">
-          <ArrowIcon alt="Deno logo" class="w-8 h-8" />
+          <ArrowIcon
+            alt="Deno logo"
+            class="w-8 h-8 cursor-pointer"
+            onClick={trans}
+          />
         </div>
         <TextArea
           readonly
